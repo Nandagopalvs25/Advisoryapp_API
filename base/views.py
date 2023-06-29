@@ -26,7 +26,7 @@ def get_name(request):
         if form.is_valid():
             id =upload(form.cleaned_data['file'].read(),request.user.admission_number)
             url= "https://drive.google.com/file/d/{id}/preview".format(id=id)
-            act = Activity(name=form.cleaned_data['activity_name'],user=request.user,date=form.cleaned_data['start_date'],file_url=url)
+            act = Activity(name=form.cleaned_data['activity_name'],user=request.user,start_date=form.cleaned_data['start_date'],end_date=form.cleaned_data['end_date'],file_url=url)
             act.save()
             return HttpResponseRedirect("/sucess")
 

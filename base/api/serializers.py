@@ -15,7 +15,7 @@ class ListUserSerializer(serializers.ModelSerializer):
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model=Activity
-        fields=("user","name","date","file_url")
+        fields=("user","name","start_date","end_date","file_url")
 
 class UserProfileSerializer(serializers.ModelSerializer):
         activity = ActivitySerializer(many=True)

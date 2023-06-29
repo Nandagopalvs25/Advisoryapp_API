@@ -34,7 +34,8 @@ class CustomUser(AbstractUser):
 class Activity(models.Model):
         user = models.ForeignKey(CustomUser,related_name="activity", on_delete=models.CASCADE,null=False)
         name=models.CharField(max_length=100)
-        date=models.CharField(max_length=50)
+        start_date=models.CharField(max_length=50)
+        end_date=models.CharField(max_length=50)
         file_url=models.CharField(max_length=300)
        
 

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.jpeg" alt="Logo">
+        <img src="{% static 'logo.jpeg' %}" alt="Logo">
         <h1>Activity Registration</h1>
     </div>
 
@@ -30,16 +30,7 @@
                 {{form.end_date}}
               
             </div>
-            <div>
-                <label for="activity_type">Activity Type</label>
-                <select id="activity_type" name="Activity">
-                    <option value="option0"></option>
-                    <option value="option1">Project</option>
-                    <option value="option2">MOOC</option>
-                    <option value="option3">Internship</option>
-                </select>
-
-            </div>
+         
             <div>
                 <label for="Certificate">Please Upload the Certificate</label>
                 {{form.file}}
