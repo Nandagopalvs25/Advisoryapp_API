@@ -1,30 +1,52 @@
 {% load static %}
 {% load account %}
 
+<!DOCTYPE html>
+<html>
 <head>
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-<div class="header">
-    <img src="images/logo.jpeg" alt="Logo">
-    <h1>Activity Registration </h1>
-</div>
+    <div class="header">
+        <img src="logo.jpeg" alt="Logo">
+        <h1>Activity Registration</h1>
+    </div>
 
+    <div class="content">
+        <form>
+            <div>
+                <label for="Name">Name</label>
+                <input type="text" id="Name" required minlength="4">
+            </div>
+            <div>
+                <label for="FromDate">From</label>
+                <input type="date" id="FromDate" name="fromDate">
+            </div>
+            <div>
+                <label for="ToDate">To</label>
+                <input type="date" id="ToDate" name="ToDate">
+            </div>
+            <div>
+                <label for="activity_type">Activity Type</label>
+                <select id="activity_type" name="Activity">
+                    <option value="option0"></option>
+                    <option value="option1">Project</option>
+                    <option value="option2">MOOC</option>
+                    <option value="option3">Internship</option>
+                </select>
 
-<div class="content">
-<form enctype="multipart/form-data" action="/home" method="post">
-    {% csrf_token %}
-    <label> Name</label> {{ form.activity_name}}<br>
+            </div>
+            <div>
+                <label for="Certificate">Please Upload the Certificate</label>
+                <input type="file" id="Certificate" name="Certificate">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="/accounts/logout">
+            <input value="Sign Out" type="submit">
+        </form>
+    </div>
     
-       <label> Start Date</label>{{form.start_date}}<br>
-       <label> End  Date</label>{{form.end_date}}<br>
-       <label>Upload File</label>{{form.file}}<br>
-    <input type="submit" value="Submit">
-</form>
-
-
-<form action="/accounts/logout" >
-    <input  value="signout" type="submit"/>
-</form>
-</div>
 </body>
+</html>
