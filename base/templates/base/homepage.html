@@ -13,18 +13,22 @@
     </div>
 
     <div class="content">
-        <form>
+        <form enctype="multipart/form-data" action="/home" method="post">
+            {% csrf_token %}
             <div>
                 <label for="Name">Name</label>
-                <input type="text" id="Name" required minlength="4">
+                {{form.activity_name}}
+                
             </div>
             <div>
                 <label for="FromDate">From</label>
-                <input type="date" id="FromDate" name="fromDate">
+                
+                {{form.start_date}}
             </div>
             <div>
                 <label for="ToDate">To</label>
-                <input type="date" id="ToDate" name="ToDate">
+                {{form.end_date}}
+              
             </div>
             <div>
                 <label for="activity_type">Activity Type</label>
@@ -38,7 +42,8 @@
             </div>
             <div>
                 <label for="Certificate">Please Upload the Certificate</label>
-                <input type="file" id="Certificate" name="Certificate">
+                {{form.file}}
+                
             </div>
             <button type="submit">Submit</button>
         </form>
