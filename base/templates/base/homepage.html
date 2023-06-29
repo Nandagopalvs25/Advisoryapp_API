@@ -10,8 +10,9 @@
 <form enctype="multipart/form-data" action="/home" method="post">
     {% csrf_token %}
     <label> Name</label> {{ form.activity_name}}<br>
-   
-       <label> Date</label>{{form.date}}<br>
+    
+       <label> Start Date</label>{{form.start_date}}<br>
+       <label> End  Date</label>{{form.end_date}}<br>
        <label>Upload File</label>{{form.file}}<br>
     <input type="submit" value="Submit">
 </form>
